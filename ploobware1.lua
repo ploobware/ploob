@@ -866,7 +866,7 @@ local MiscTab = Window:NewTab("Miscellaneous")
             local args = {
                 [1] = "Update",
                 [2] = {
-                    ["DescriptionText"] = "georg floyd had 4x the lethal dose of fentnyl in his bloodstream",
+                    ["DescriptionText"] = "georg floyd had 4x the lethal dose of fntnyl in his bloodstream",
                     ["ImageId"] = 10451035279
                 }
             }
