@@ -862,6 +862,16 @@ local MiscTab = Window:NewTab("Miscellaneous")
         ScriptSection:NewButton("Rate my Avatar 1 star all", "Rates everybody 1 star on Rate My Avatar", function()
             local function a(b)game.StarterGui:SetCore("SendNotification",{Title="PLOOBWARE",Text="Rated "..b.." 1/5 stars",Icon="",Duration=5})end;for c,d in pairs(game:GetService("Players"):GetDescendants())do if d:IsA("Player")then print(d.Name)local e=game:GetService("Players")[d.Name]local f=1;game:GetService("ReplicatedStorage").PostRating:FireServer(e,f)a(d.Name)end end
         end)
+        ScriptSection:NewButton("Rate my Avatar george floyd booth", "autopsy report", function()
+            local args = {
+                [1] = "Update",
+                [2] = {
+                    ["DescriptionText"] = "georg floyd had 4x the lethal dose of fentnyl in his bloodstream",
+                    ["ImageId"] = 10451035279
+                }
+            }
+            game:GetService("ReplicatedStorage").CustomiseBooth:FireServer(unpack(args))
+        end)
         ScriptSection:NewButton("LGBT Hangout 2 Seizure", "Changes your booth colors extremely quickly", function()
             local event = game.ReplicatedStorage.GoBestie
             local function set_sign_colors(sign_c,text_c,shop_c)
