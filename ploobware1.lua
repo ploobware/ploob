@@ -1,11 +1,11 @@
 -- Credit to xHeptc for Kavo UILib
-
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 local Window = Library.CreateLib("Ploobware v1.11", "Serpent")
 
 local function chat(msg)
     game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(msg, "All")
 end
+
 
 local Race = Window:NewTab("Race")
     local GeneralRace = Race:NewSection("General Racial Facts")
@@ -358,6 +358,14 @@ local LGBT = Window:NewTab("LGBT and Gender")
             chat("Suiczxzide rates INCREASE after reassignment surgery.")
                 setclipboard("archive.md/fvdkz")
         end)
+        Transsexuality:NewButton("MtFs are 18x more likely to violently offend", "https://archive.ph/zWBXC", function()
+            chat("A 2011 study found that MtF transitioners are 18x more likely than biological females to be convicted of a violent offence.")
+            setclipboard("archive.ph/zWBXC")
+        end)
+        Transsexuality:NewButton("58.9% of MtF prisoners are rapists", "https://archive.ph/zWBXC", function()
+            chat("In 2019, 58.9% of transwomen in UK prisons had committed scx crimes, compared to only 16.8% of cis men.")
+            setclipboard("archive.ph/zWBXC")
+        end)
         Transsexuality:NewButton("Autism 10x more prevalent in trans kids", "https://archive.ph/vFGPc", function()
             chat("A 2010 study found that autism spectrum disorder is ten times more prevalent among children and adolescents who are referred to gender identitity clinics.")
             setclipboard("archive.ph/vFGPc")
@@ -589,10 +597,6 @@ local Furries = Window:NewTab("Furries")
     local Zoophilia = Furries:NewSection("Sexuality + Zoophilia")
         Zoophilia:NewButton("78.5% of furries not straight", "https://archive.md/ICtsQ", function()
             chat("78.5% of furries said they were not completely straight.")
-            setclipboard("archive.md/ICtsQ")
-        end)
-        Zoophilia:NewButton("14.94% of furries reported zoophilia", "https://archive.md/ICtsQ", function()
-            chat("14.94% of furries said they were zoophzxles.")
             setclipboard("archive.md/ICtsQ")
         end)
         Zoophilia:NewButton("14.9% of furries are zoophiles", "https://archive.md/44kck", function()
@@ -861,16 +865,6 @@ local MiscTab = Window:NewTab("Miscellaneous")
     local ScriptSection = MiscTab:NewSection("Other Scripts")
         ScriptSection:NewButton("Rate my Avatar 1 star all", "Rates everybody 1 star on Rate My Avatar", function()
             local function a(b)game.StarterGui:SetCore("SendNotification",{Title="PLOOBWARE",Text="Rated "..b.." 1/5 stars",Icon="",Duration=5})end;for c,d in pairs(game:GetService("Players"):GetDescendants())do if d:IsA("Player")then print(d.Name)local e=game:GetService("Players")[d.Name]local f=1;game:GetService("ReplicatedStorage").PostRating:FireServer(e,f)a(d.Name)end end
-        end)
-        ScriptSection:NewButton("Rate my Avatar george floyd booth", "autopsy report", function()
-            local args = {
-                [1] = "Update",
-                [2] = {
-                    ["DescriptionText"] = "georg floyd had 4x the lethal dose of fntnyl in his bloodstream",
-                    ["ImageId"] = 10451035279
-                }
-            }
-            game:GetService("ReplicatedStorage").CustomiseBooth:FireServer(unpack(args))
         end)
         ScriptSection:NewButton("LGBT Hangout 2 Seizure", "Changes your booth colors extremely quickly", function()
             local event = game.ReplicatedStorage.GoBestie
