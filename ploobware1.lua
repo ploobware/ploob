@@ -866,6 +866,60 @@ local MiscTab = Window:NewTab("Miscellaneous")
         ScriptSection:NewButton("Rate my Avatar 1 star all", "Rates everybody 1 star on Rate My Avatar", function()
             local function a(b)game.StarterGui:SetCore("SendNotification",{Title="PLOOBWARE",Text="Rated "..b.." 1/5 stars",Icon="",Duration=5})end;for c,d in pairs(game:GetService("Players"):GetDescendants())do if d:IsA("Player")then print(d.Name)local e=game:GetService("Players")[d.Name]local f=1;game:GetService("ReplicatedStorage").PostRating:FireServer(e,f)a(d.Name)end end
         end)
+        ScriptSection:NewButton("1 star furries", "finds people wearing furry items", function() -- lmfao
+            local returns = {}
+            for _,plr in pairs(Players:GetPlayers()) do -- i skidded this from prisj's furryplayercase IY plugin
+                for i,hat in pairs(plr.Character:GetChildren()) do
+                    if hat:IsA("Accessory") and Smatch(hat.Name, furitemlist) then
+                        print(plr.Name.." is wearing furry item: "..hat.Name)
+                        table.insert(returns,plr)
+                        break
+                    end
+                end
+            end
+            if next(returns) then
+                for i, v in pairs(returns) do
+                    local rating = 1
+                    game:GetService("ReplicatedStorage").PostRating:FireServer(v, rating)
+                    print("Rated "..v.Name.." "..rating.."/5 stars")
+                    game.StarterGui:SetCore("SendNotification", {Title = "PLOOBWARE", Text = "Rated "..v.Name.." "..rating.."/5 stars", Icon = "", Duration = 5})
+                end
+            else
+                print("no people wearing furry items found")
+            end
+        end)
+        ScriptSection:NewButton("1 star LGBT", "finds people wearing pride items", function()
+            local returns = {}
+            for _,plr in pairs(Players:GetPlayers()) do
+                for i,hat in pairs(plr.Character:GetChildren()) do
+                    if hat:IsA("Accessory") and Smatch(hat.Name, prideitemlist) then
+                        print(plr.Name.." is wearing pride item: "..hat.Name)
+                        table.insert(returns,plr)
+                        break
+                    end
+                end
+            end
+            if next(returns) then
+                for i, v in pairs(returns) do
+                    local rating = 1 --modify this if ur not a bigot
+                    game:GetService("ReplicatedStorage").PostRating:FireServer(v, rating)
+                    print("Rated "..v.Name.." "..rating.."/5 stars")
+                    game.StarterGui:SetCore("SendNotification", {Title = "PLOOBWARE", Text = "Rated "..v.Name.." "..rating.."/5 stars", Icon = "", Duration = 5})
+                end
+            else
+                print("no people wearing pride items found")
+            end
+        end)
+        ScriptSection:NewButton("Rate my Avatar george floyd booth", "autopsy report", function()
+            local args = {
+                [1] = "Update",
+                [2] = {
+                    ["DescriptionText"] = "georg floyd had 4x the lethal dose of fntnyl in his bloodstream",
+                    ["ImageId"] = 10451035279
+                }
+            }
+            game:GetService("ReplicatedStorage").CustomiseBooth:FireServer(unpack(args))
+        end)
         ScriptSection:NewButton("LGBT Hangout 2 Seizure", "Changes your booth colors extremely quickly", function()
             local event = game.ReplicatedStorage.GoBestie
             local function set_sign_colors(sign_c,text_c,shop_c)
@@ -898,7 +952,4 @@ local MiscTab = Window:NewTab("Miscellaneous")
             cpos(plr.Character["Right Arm"],1.5,1,0,0,0,math.rad(180))
             cpos(plr.Character["Left Leg"],-1.5,-1,0,0,0,math.rad(0))
             cpos(plr.Character["Right Leg"],1,-1.5,0,0,0,math.rad(90))
-        end)
-        ScriptSection:NewButton("ANTICHATBAN", "Does not upload chat messages to roblox's website", function()
-            loadstring(game:HttpGet("https://api.upload.systems/pastes/jbU1gHIriNgT/raw"))()
         end)
