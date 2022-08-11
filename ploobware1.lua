@@ -860,7 +860,17 @@ local ConspiraciesTab = Window:NewTab("Conspiracies")
             chat("There are several video testimonies of firefighters describing the explosions they heard from Tower 7 immediately before its collapse.")
             setclipboard("Look up 'firefighter testimony Tower 7.'")
         end)
-
+local prideitemlist = {"pride", "trans", "gay", "lgbt", "lesbian", "bisexual"}
+local furitemlist = {"furry", "fur", "wolf", "bunny", "ears", "fluff", "floof", "fox", "leopard", "protogen", "shark", "dragon", "critter", "snout", "robocreature"}
+function Smatch(String, List)
+	String = String:lower()
+    for i,v in pairs(List) do
+        if string.find(String, v) then
+           return true
+        end
+    end
+    return false
+end
 local MiscTab = Window:NewTab("Miscellaneous")
     local ScriptSection = MiscTab:NewSection("Other Scripts")
         ScriptSection:NewButton("Rate my Avatar 1 star all", "Rates everybody 1 star on Rate My Avatar", function()
