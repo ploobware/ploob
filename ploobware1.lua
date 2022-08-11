@@ -871,6 +871,7 @@ function Smatch(String, List)
     end
     return false
 end
+Players = game:GetService("Players")
 local MiscTab = Window:NewTab("Miscellaneous")
     local ScriptSection = MiscTab:NewSection("Other Scripts")
         ScriptSection:NewButton("Rate my Avatar 1 star all", "Rates everybody 1 star on Rate My Avatar", function()
