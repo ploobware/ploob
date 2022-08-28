@@ -171,6 +171,14 @@ local CopypastaTab = Window:NewTab("Copypastas")
         CopypastaSection:NewButton("AAAAAAAAAA", "very large chat bubble", function()
             chat("haahahahahahahahahah HEHH (BLOOD AND GUT NOISES) AuU AUHH AAAAAARRRRRRRGHH SOMEONE,HELPAA AUGH AAAAA AHG AHHUGH AUH AUH AUHUH MAKE IT STOP (CRYING) GET IT OOOOFFFFFFFFFFFFFF AAAAAAARGH (cries)")
         end)
+        --[[
+        CopypastaSection:NewButton("buttonname", "description", function()
+            chat("message")
+        end)
+        CopypastaSection:NewButton("buttonname", "description", function()
+            chat("message")
+        end)
+        ]]
 
 if game.PlaceId == 6708206173 then -- rate my avatar specific
     delaydecimal = 5 -- rate my avatar uses bubble chat so this looks better
@@ -189,7 +197,26 @@ if game.PlaceId == 6708206173 then -- rate my avatar specific
                 }
                 game:GetService("ReplicatedStorage").CustomiseBooth:FireServer(unpack(args))
             end)
-            BoothSection:NewButton("Remove stage barrier/blacklist", "pretty simple", function()
+            BoothSection:NewButton("copy bladee decal id", "decal id setclipboard", function()
+                setclipboard("7299593285")
+            end)
+            BoothSection:NewButton("copy ecco2k decal id", "decal id setclipboard", function()
+                setclipboard("6916089660")
+            end)
+            BoothSection:NewButton("copy i <3 ecco2k decal id", "decal id setclipboard", function()
+                setclipboard("8860362827")
+            end)
+            BoothSection:NewButton("copy red light album cover decal id", "decal id setclipboard", function()
+                setclipboard("8484363569")
+            end)
+            BoothSection:NewButton("copy stage12 decal id", "decal id setclipboard", function()
+                setclipboard("6678991730")
+            end)
+            BoothSection:NewButton("copy epstein island decal id", "decal id setclipboard", function()
+                setclipboard("6788343183")
+            end)
+        local TomfoolerySection = RMATab:NewSection("Mischief, Hijinks, and Tomfoolery")
+            TomfoolerySection:NewButton("Remove stage barrier/blacklist", "pretty simple", function()
                 game:GetService("Workspace").GroupAccessPart:Destroy()
                 spawn(function()
                     while wait() do
@@ -201,7 +228,6 @@ if game.PlaceId == 6708206173 then -- rate my avatar specific
                     end
                 end)
             end)
-        local TomfoolerySection = RMATab:NewSection("Mischief, Hijinks, and Tomfoolery")
             TomfoolerySection:NewButton("1 star all", "owned", function()
                 for i, v in pairs(game:GetService("Players"):GetDescendants()) do
                     if v:IsA("Player") then
