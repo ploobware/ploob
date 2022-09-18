@@ -264,30 +264,6 @@ if game.PlaceId == 6708206173 then -- rate my avatar specific
                     print("no people wearing furry items found")
                 end
             end)
-            TomfoolerySection:NewButton("1 star LGBT", "finds people wearing pride items", function()
-                local returns = {}
-                for _,plr in pairs(Players:GetPlayers()) do
-                    for i,hat in pairs(plr.Character:GetChildren()) do
-                        if hat:IsA("Accessory") and Smatch(hat.Name, prideitemlist) then
-                            print(plr.Name.." is wearing pride item: "..hat.Name)
-                            table.insert(returns,plr)
-                            break
-                        end
-                    end
-                end
-                if next(returns) then
-                    for i, v in pairs(returns) do
-                        local rating = 1 --modify this if ur not a bigot
-                        game:GetService("ReplicatedStorage").PostRating:FireServer(v, rating)
-                        print("Rated "..v.Name.." "..rating.."/5 stars")
-                        game.StarterGui:SetCore(
-                            "SendNotification", {Title = "PLOOBWARE", Text = "Rated "..v.Name.." "..rating.."/5 stars", Icon = "", Duration = 5}
-                        )
-                    end
-                else
-                    print("no people wearing pride items found")
-                end
-            end)
         local OtherRMASection = RMATab:NewSection("Other")
             OtherRMASection:NewButton("Teleport to 4-star lounge", "cool kids only", function()
                 Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-5900.04785, -54, 22.4846897, -0.999979854, 1.81327859e-08, -0.00634817407, 1.81117024e-08, 1, 3.37857564e-09, 0.00634817407, 3.26353145e-09, -1)
